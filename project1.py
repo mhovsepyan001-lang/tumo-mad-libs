@@ -1,3 +1,4 @@
+import random
 choice = input("Which template would you like to use? (1, 2, or 3): ")
 
 
@@ -127,4 +128,6 @@ elif choice == "3":
 
 
 else:
+
     print("Invalid choice. Please select 1, 2, or 3.")
+    
