@@ -1,8 +1,6 @@
-choice = input("Which template would you like to use? (1, 2, or 3): ")
+import random
 
-
-if choice == "1":
-
+def template1():
     number = input("Input some number: ")
     measure = input("Input the measure of time: ")
     transportation = input("Input mode of transportation: ")
@@ -18,9 +16,9 @@ if choice == "1":
     part_of_the_body2 = input("Input other part of the body: ")
     noun4 = input("Input noun: ")
     adjective3 = input("Input adjective: ")
-    silly_word = input("Input silly_world: ")
+    silly_word = input("Input silly_word: ")
 
-    template1 = (
+    template_1 = (
         "It was about " + number + " " + measure +
         " ago when I arrived at the hospital in a " + transportation +
         ". The hospital is a/an " + adjective +
@@ -38,10 +36,10 @@ if choice == "1":
         " " + noun + "!"
     )
 
-    print(template1)
+    print(template_1)
 
 
-elif choice == "2":
+def template2():
 
     proper_noun = input("Input a proper noun: ")
     noun = input("Input a noun: ")
@@ -58,7 +56,7 @@ elif choice == "2":
     silly_word = input("Input a silly word: ")
     noun2 = input("Input a noun: ")
 
-    template2 = (
+    template_2 = (
         "This weekend I am going camping with " + proper_noun +
         ". I packed my lantern, sleeping bag, and " + noun +
         ". I am so " + adjective + " to " + verb +
@@ -78,10 +76,10 @@ elif choice == "2":
         " around the campfire!!"
     )
 
-    print(template2)
+    print(template_2)
 
 
-elif choice == "3":
+def template3():
 
     proper_noun = input("Input a proper noun: ")
     adjective = input("Input an adjective: ")
@@ -104,7 +102,7 @@ elif choice == "3":
     adjective5 = input("Input another adjective: ")
     noun5 = input("Input a noun: ")
 
-    template3 = (
+    template_3 = (
         "Dear " + proper_noun +
         ", I am writing to you from a " + adjective +
         " castle in an enchanted forest. I found myself here one day "
@@ -123,8 +121,17 @@ elif choice == "3":
         " on a " + adjective5 + " " + noun5 + "!"
     )
 
-    print(template3)
-
-
-else:
-    print("Invalid choice. Please select 1, 2, or 3.")
+    print(template_3)
+choice = input("Which template would you like to use? (1, 2, 3 or 4 for random): ")
+while choice not in ["1", "2", "3", "4"]:
+    print("Invalid choice. Please select 1, 2, 3, or 4 for random.")
+    choice = input("Which template would you like to use? (1, 2, 3 or 4 for random): ")
+if choice == "1":
+    template1()
+elif choice == "2":
+    template2()
+elif choice == "3":
+    template3()
+elif choice == "4":
+    random_template = random.choice([template1, template2, template3])
+    random_template()
